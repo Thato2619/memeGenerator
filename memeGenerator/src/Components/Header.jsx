@@ -2,10 +2,13 @@ import React from "react";
 
 export default function Header(){
     return(
-        <nav>
-            <img />
-            <h2>Meme Generator</h2>
-            <h4>React Course - Project 1</h4>
-        </nav>
+        <header className="header">
+            <img 
+            src="./images/lebron.png"
+            className="header-image"
+            />
+            <h2 className="header-title">Meme Generator</h2>
+            <h4 className="header-project">React Course - Project 1</h4>
+        </header>
     )
 }
