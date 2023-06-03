@@ -1,10 +1,52 @@
-*{
-  
+* {
   box-sizing: border-box;
 }
 
+/* change font to either Inter or Arial for navbar */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+main {
+  padding: 36px;
+}
+
+/*style the layout of the header*/
+.header {
+  display: flex;
+  align-items: center;
+  height: 65px;
+  background: linear-gradient(90deg, #099773 1.18%, #43b692 100%);
+  color: white;
+  padding: 20px;
+}
+
+/*style the positioning of the image*/
+.header-image {
+  height: 100%;
+  margin-right: 6px;
+}
+
+/*style the layout and style of the title of header*/
+.header-title {
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+
+/*change font and size of the */
+.header-project{
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+
+/*  ,*/
+
+
