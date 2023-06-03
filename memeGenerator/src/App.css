@@ -40,13 +40,38 @@ main {
   margin-right: auto;
 }
 
-/*change font and size of the */
+/*change font weight of the subtitle */
 .header-project{
   font-size: 0.95rem;
   font-weight: 500;
 }
 
 
-/*  ,*/
+/* style form layout */
+.form{
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap:17px;
+}
+
+.form-input{
+  font-family: "Inter", sans-serif;
+  border-radius: 5px;
+  border: 1px solid #099773;
+  text-indent: 5px;
+}
+
+
+.form-button{
+  grid-column: 1 / -1;
+  font-family: "Inter", sans-serif;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #099773 1.18%, #43b692 100%);
+  color: white;
+  border:none ;
+  cursor: pointer;
+}
+
+
 
 
