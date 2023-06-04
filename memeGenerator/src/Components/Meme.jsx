@@ -4,39 +4,37 @@ import { useEffect } from "react";
 
 export default function Meme(){
 
-    //create useState to ensure that properties of object are used for 
     const [meme, setMeme] = useState({
-        topText:"",
-        bottomText:"",
-        randomImage:"http://i.imgflip.com/1bij.jpg" 
+        topText: "",
+        bottomText: "",
+        randomImage: "http://i.imgflip.com/1bij.jpg" 
     })
-
-    //implement states with useEffects by implentating functionality with API using fethc and .then
     const [allMemes, setAllMemes] = useState([])
-
-    useEffect( () => {
+    
+    useEffect(() => {
         fetch("https://api.imgflip.com/get_memes")
-        .then(res => res.json())
-        .then(data => setAllMemes(data.data.memes))
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes))
     }, [])
-
-   getMemeImage = () => {
-       const randomNumber = Math.floor(Math.floor(Math.random()) * allMemes.length)
-       const url = allMemes[randomNumber].url
-       setMeme(prevMeme => ({
-           ...prevMeme,
-           randomImage: url
-
-       }))
+    
+    function getMemeImage() {
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
+        const url = allMemes[randomNumber].url
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            randomImage: url
+        }))
+        
     }
-
-    handleChange = (event) => {
+    
+    function handleChange(event) {
         const {name, value} = event.target
-        setMeme(prevName => ({
-            ...prevName,
-            [name]:value
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
         }))
     }
+    
  
 
     return(
@@ -74,7 +72,7 @@ export default function Meme(){
                 <div className="meme">
                     <img src={meme.randomImage} className="meme-image" />
                     <h2 className="meme-text top">{meme.topText}</h2>
-                    <h2 className="meme-bottom bottom">{meme.bottomText}</h2>
+                    <h2 className="meme-text bottom">{meme.bottomText}</h2>
                 </div>
             </div>
         </main>
