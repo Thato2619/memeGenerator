@@ -11,6 +11,27 @@ export default function Meme(){
         randomImage:"http://i.imgflip.com/1bij.jpg" 
     })
 
+    //implement states with useEffects by implentating functionality with API using fethc and .then
+    const [allMemes, setAllMemes] = useState([])
+
+    useEffect( () => {
+        fetch("https://api.imgflip.com/get_memes")
+        .then(res => res.json())
+        .then(data => setAllMemes(data.data.memes))
+    }, [])
+
+   getMemeImage = () => {
+       const randomNumber = Math.floor(Math.floor(Math.random()) * allMemes.length)
+       const url = allMemes[randomNumber].url
+       setMeme(prevMeme => ({
+           ...prevMeme,
+           randomImage: url
+
+       }))
+    }
+
+ 
+
     return(
         <main>
             <form className="form">
@@ -20,6 +41,7 @@ export default function Meme(){
                     className="form-input"
                     name="topText"
                     value={meme.topText}
+                    
                     
                     
                 />
